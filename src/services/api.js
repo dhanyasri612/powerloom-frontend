@@ -1,9 +1,14 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+// Use environment variable in production, fallback to Render URL, and finally localhost for local dev
+const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  "https://powerloom-backend.onrender.com"; // ✅ your Render backend URL
 
+// Create a single axios instance
 const api = axios.create({
-  baseURL: API_BASE + "/api",
+  baseURL: `${API_BASE}/api`,
+  withCredentials: true, // allow cookies / auth tokens if needed
 });
 
 // Helper function to get full image URL
@@ -13,12 +18,16 @@ export const getImageUrl = (imagePath) => {
   return `${API_BASE}${imagePath}`;
 };
 
-// Product APIs
+// =======================
+// 🔹 Product APIs
+// =======================
 export const createProduct = (data) => api.post(`/products`, data);
 export const updateProduct = (id, data) => api.put(`/products/${id}`, data);
 export const deleteProduct = (id) => api.delete(`/products/${id}`);
 
-// Upload API
+// =======================
+// 🔹 Upload API
+// =======================
 export const uploadImage = (file) => {
   const formData = new FormData();
   formData.append("image", file);
@@ -27,13 +36,18 @@ export const uploadImage = (file) => {
   });
 };
 
-// Order APIs
+// =======================
+// 🔹 Order APIs
+// =======================
 export const createOrder = (data) => api.post(`/orders`, data);
 export const updateOrder = (id, data) => api.put(`/orders/${id}`, data);
 export const deleteOrder = (id) => api.delete(`/orders/${id}`);
 
-export default api;
-
-// Loom APIs
+// =======================
+// 🔹 Loom APIs
+// =======================
 export const getLooms = () => api.get(`/looms`);
 export const updateLoom = (loomId, data) => api.put(`/looms/${loomId}`, data);
+
+// Export axios instance
+export default api;

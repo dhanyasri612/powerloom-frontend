@@ -13,7 +13,7 @@ import Services from "./pages/Services";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import Admin from "./admin";
+import Admin from "./Admin";
 import ManageProducts from "./pages/ManageProducts";
 import ManageOrders from "./pages/ManageOrders";
 import UserDashboard from "./pages/UserDashboard";

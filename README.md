@@ -16,3 +16,39 @@ Note: This will impact Vite dev & build performances.
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+---
+
+## **Frontend README.md**
+
+```markdown
+# PowerLoom Frontend
+
+This is the React frontend for the PowerLoom application. It provides the user interface for managing products, orders, looms, and dashboards, and connects to the backend API deployed on Render.
+
+## Features
+- User authentication and role-based access (Admin & Users)
+- Product listing, detail, and management
+- Order management
+- Loom monitoring
+- Admin dashboard
+- File uploads
+- Responsive design
+
+## Technologies
+- React.js
+- Vite
+- Axios
+- Socket.IO-client
+- React Router
+- Tailwind CSS (or your CSS framework)
+- dotenv for environment variables
+
+## Setup & Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/dhanyasri612/powerloom-frontend.git
+cd powerloom-frontend

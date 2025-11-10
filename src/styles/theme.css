@@ -1,0 +1,17 @@
+/* Simple Theme - Body Background Only */
+:root[data-theme="light"] {
+  --body-bg: #ffffff;
+  --body-text: #1a1a1a;
+}
+
+:root[data-theme="dark"] {
+  --body-bg: #1a1f2e;
+  --body-text: #f1f5f9;
+}
+
+/* Only apply theme to body */
+body {
+  background-color: var(--body-bg) !important;
+  color: var(--body-text) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

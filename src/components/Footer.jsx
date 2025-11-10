@@ -1,11 +1,8 @@
-import React from 'react';
-
-const Footer = () => {
+import React from "react";
+export default function Footer(){
   return (
-    <footer className="bg-dark text-white text-center py-3 mt-auto">
-      <p className="mb-0">&copy; {new Date().getFullYear()} Powerloom Works — All rights reserved.</p>
+    <footer className="bg-dark text-white text-center py-3 mt-5">
+      <div className="container">© {new Date().getFullYear()} Andal Textiles — All rights reserved.</div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,54 +1,103 @@
-# React + Vite
+# 🧶 Powerloom Management System – Full Stack (MERN)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Powerloom Management System** is a comprehensive full-stack web application designed to modernize loom operations, product and order tracking, and analytics in textile manufacturing industries.  
+It integrates a **React.js frontend**, a **Node.js/Express.js backend**, and a **MongoDB Atlas** database — all deployed seamlessly using **Vercel** and **Render**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Overview
 
-## React Compiler
+Powerloom offers real-time visibility into loom performance, order processing, and production analytics, empowering textile managers with data-driven insights.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🌐 Live Links
 
-## Expanding the ESLint configuration
+- **Frontend:** [https://powerloom-frontend-rpgj.vercel.app](https://powerloom-frontend-rpgj.vercel.app)
+- **Backend API:** [https://powerloom-backend.onrender.com](https://powerloom-backend.onrender.com)
+- **Database:** MongoDB Atlas (Cloud)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Key Features
+
+### Backend (Node.js + Express + MongoDB)
+- 🔐 **JWT Authentication & Authorization**  
+- 🧶 **Loom Management** — Real-time loom data tracking  
+- 📦 **Product Management** — CRUD for product inventory  
+- 🧾 **Order Management** — End-to-end order processing  
+- 📊 **Analytics Dashboard** — Insightful production stats  
+- ⚡ **Socket.IO Integration** — Real-time machine updates  
+- ☁️ **MongoDB Atlas Database** — Cloud-based data storage  
+- 🔄 **CORS-Enabled REST API** for frontend integration  
+
+### Frontend (React + Vite + Tailwind)
+- 🎨 **Responsive UI/UX** — Modern design and mobile friendly  
+- 🔑 **Secure Login & Role-Based Access**  
+- 🧭 **Dashboard for Admin and User Views**  
+- 📈 **Analytics with Chart.js**  
+- ⚙️ **Dynamic API Integration with Axios**  
+- ⚡ **Hosted on Vercel for instant global access**
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer | Technologies |
+|-------|---------------|
+| **Frontend** | React.js, Vite, Axios, Chart.js, Tailwind CSS, Framer Motion |
+| **Backend** | Node.js, Express.js, Socket.IO, JWT, Mongoose |
+| **Database** | MongoDB Atlas |
+| **Deployment** | Vercel (Frontend), Render (Backend) |
+
+---
+
+## 🧱 Project Structure
+
+Powerloom/
+│
+├── backend/
+│ ├── config/
+│ │ └── db.js
+│ ├── models/
+│ │ ├── Loom.js
+│ │ ├── Product.js
+│ │ ├── Order.js
+│ │ └── User.js
+│ ├── routes/
+│ │ ├── authRoutes.js
+│ │ ├── products.js
+│ │ ├── orders.js
+│ │ ├── looms.js
+│ │ ├── analytics.js
+│ │ └── dashboard.js
+│ ├── server.js
+│ ├── package.json
+│ └── .env
+│
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── contexts/
+│ │ ├── services/
+│ │ ├── styles/
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ ├── package.json
+│ └── .env
+│
+└── README.md
 
 
 
 ---
 
-## **Frontend README.md**
+## ⚙️ Environment Configuration
 
-```markdown
-# PowerLoom Frontend
-
-This is the React frontend for the PowerLoom application. It provides the user interface for managing products, orders, looms, and dashboards, and connects to the backend API deployed on Render.
-
-## Features
-- User authentication and role-based access (Admin & Users)
-- Product listing, detail, and management
-- Order management
-- Loom monitoring
-- Admin dashboard
-- File uploads
-- Responsive design
-
-## Technologies
-- React.js
-- Vite
-- Axios
-- Socket.IO-client
-- React Router
-- Tailwind CSS (or your CSS framework)
-- dotenv for environment variables
-
-## Setup & Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/dhanyasri612/powerloom-frontend.git
-cd powerloom-frontend
+### Backend `.env`
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/powerloom
+JWT_SECRET=your-secret-key
+PORT=5000
+VITE_API_BASE_URL=https://powerloom-backend.onrender.com

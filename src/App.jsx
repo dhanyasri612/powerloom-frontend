@@ -20,7 +20,7 @@ import UserDashboard from "./pages/UserDashboard";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/powerloom">
+    <BrowserRouter basename="/">
       <Layout>
         <div className="container my-4">
           <Routes>

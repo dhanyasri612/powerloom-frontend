@@ -1,54 +1,144 @@
-# 🧶 Powerloom Management System – Full Stack (MERN)
+# 🧶 Powerloom - MERN Full Stack Application
 
-The **Powerloom Management System** is a comprehensive full-stack web application designed to modernize loom operations, product and order tracking, and analytics in textile manufacturing industries.  
-It integrates a **React.js frontend**, a **Node.js/Express.js backend**, and a **MongoDB Atlas** database — all deployed seamlessly using **Vercel** and **Render**.
+Powerloom is a full-featured MERN (MongoDB, Express, React, Node.js) web application designed for managing textile production data, loom operations, orders, and analytics. It includes an admin dashboard, real-time socket updates, and secure authentication.
 
----
+## 🚀 Live Demo
+- 🖥️ Frontend (React + Vite): https://powerloom-frontend-rpgj.vercel.app  
+- ⚙️ Backend (Node + Express): https://powerloom-backend.onrender.com  
 
-## 🧩 Overview
+## 🧩 Tech Stack
+| Layer | Technology |
+|--------|-------------|
+| Frontend | React, Vite, Axios, TailwindCSS |
+| Backend | Node.js, Express.js, Socket.IO |
+| Database | MongoDB Atlas (Cloud) |
+| Authentication | JWT (JSON Web Token) |
+| Hosting | Vercel (Frontend) + Render (Backend) |
 
-Powerloom offers real-time visibility into loom performance, order processing, and production analytics, empowering textile managers with data-driven insights.
+## 📁 Folder Structure
+Powerloom/
+├── server/                   # Express backend
+│   ├── config/               # Database config (db.js)
+│   ├── models/               # Mongoose models
+│   ├── routes/               # API routes
+│   ├── uploads/              # Uploaded files
+│   ├── server.js             # Main server file
+│   └── .env                  # Environment variables
+│
+├── src/                      # React frontend
+│   ├── components/           # Reusable UI components
+│   ├── pages/                # Page-level views
+│   ├── services/             # API calls
+│   ├── styles/               # CSS / Tailwind files
+│   ├── App.jsx               # Main app entry
+│   └── main.jsx              # ReactDOM render
+│
+├── package.json
+└── vite.config.js
 
----
+## ⚙️ Environment Variables
 
-## 🌐 Live Links
+### Backend (.env)
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/test
+JWT_SECRET=anyrandomsecret
+PORT=5000
 
-- **Frontend:** [https://powerloom-frontend-rpgj.vercel.app](https://powerloom-frontend-rpgj.vercel.app)
-- **Backend API:** [https://powerloom-backend.onrender.com](https://powerloom-backend.onrender.com)
-- **Database:** MongoDB Atlas (Cloud)
+> You can change `/test` to `/powerloom` to use a specific database name.
 
----
+### Frontend (.env)
+If using Vite:
+VITE_API_BASE_URL=https://powerloom-backend.onrender.com
+If using Create React App:
+REACT_APP_API_BASE_URL=https://powerloom-backend.onrender.com
 
-## 🚀 Key Features
+## 🧠 Features
+✅ Admin Authentication (JWT-secured)  
+✅ Product & Order Management (CRUD operations)  
+✅ Real-time Loom Updates (Socket.IO)  
+✅ Analytics Dashboard with Metrics  
+✅ Image/File Upload Route  
+✅ Responsive UI (Tailwind + React)  
 
-### Backend (Node.js + Express + MongoDB)
-- 🔐 **JWT Authentication & Authorization**  
-- 🧶 **Loom Management** — Real-time loom data tracking  
-- 📦 **Product Management** — CRUD for product inventory  
-- 🧾 **Order Management** — End-to-end order processing  
-- 📊 **Analytics Dashboard** — Insightful production stats  
-- ⚡ **Socket.IO Integration** — Real-time machine updates  
-- ☁️ **MongoDB Atlas Database** — Cloud-based data storage  
-- 🔄 **CORS-Enabled REST API** for frontend integration  
+## 🛠️ Installation (Local Setup)
 
-### Frontend (React + Vite + Tailwind)
-- 🎨 **Responsive UI/UX** — Modern design and mobile friendly  
-- 🔑 **Secure Login & Role-Based Access**  
-- 🧭 **Dashboard for Admin and User Views**  
-- 📈 **Analytics with Chart.js**  
-- ⚙️ **Dynamic API Integration with Axios**  
-- ⚡ **Hosted on Vercel for instant global access**
+### 1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/powerloom.git
+cd powerloom
 
----
+### 2️⃣ Backend Setup
+cd server
+npm install
 
-## 🏗️ Tech Stack
+Create `.env` inside `/server`:
+MONGO_URI=your-mongodb-uri
+JWT_SECRET=anyrandomsecret
+PORT=5000
 
-| Layer | Technologies |
-|-------|---------------|
-| **Frontend** | React.js, Vite, Axios, Chart.js, Tailwind CSS, Framer Motion |
-| **Backend** | Node.js, Express.js, Socket.IO, JWT, Mongoose |
-| **Database** | MongoDB Atlas |
-| **Deployment** | Vercel (Frontend), Render (Backend) |
+Run backend:
+npm start
+Backend runs at http://localhost:5000
 
----
+### 3️⃣ Frontend Setup
+cd ..
+npm install
+npm run dev
+Frontend runs at http://localhost:5173
 
+## ☁️ Deployment Guide
+
+### Backend (Render)
+1. Push backend repo to GitHub  
+2. Create a new Render Web Service  
+3. Add Environment Variables:
+   - MONGO_URI
+   - JWT_SECRET
+   - PORT  
+4. Deploy  
+✅ Backend URL → https://powerloom-backend.onrender.com
+
+### Frontend (Vercel)
+1. Import frontend repo to Vercel  
+2. Add Environment Variable:
+   VITE_API_BASE_URL=https://powerloom-backend.onrender.com
+3. Build Command → `npm run build`  
+4. Output Directory → `dist`  
+5. Deploy  
+✅ Frontend URL → https://powerloom-frontend-rpgj.vercel.app
+
+## 👨‍💻 Default Admin Login
+Email: admin@example.com  
+Password: Admin123!  
+
+If forgotten, create a new admin in MongoDB `users` collection manually:
+{
+  "name": "Admin",
+  "email": "admin@example.com",
+  "password": "$2b$10$Rp6Vzq2LL94Y0JX9MfN3kOZtLCmDi/1QFrAXFM4Vi/BmxpdL03YhG",
+  "role": "admin"
+}
+This hash equals password `Admin123!`.
+
+## 🧰 Useful Commands
+npm start → Start backend server  
+npm run dev → Run frontend locally  
+npm run build → Build production frontend  
+npm install → Install dependencies  
+
+## 🪄 Common Issues
+Network Error → Wrong backend URL → Check VITE_API_BASE_URL  
+Slow Load → Render app sleeping → Use UptimeRobot  
+CORS blocked → Backend origin missing → Update CORS config in server.js  
+Invalid credentials → Password hash mismatch → Update bcrypt hash in MongoDB  
+
+## 🧠 Future Improvements
+- Add email-based password reset  
+- Pagination and search in admin dashboard  
+- Role-based access control  
+- Cloudinary image hosting  
+
+## 📜 License
+This project is open-source and available under the MIT License.
+
+## 💬 Contact
+Author: Dhanyasri Kalisamy  
+GitHub: https://github.com/dhanyasri612

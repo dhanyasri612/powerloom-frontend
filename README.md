@@ -15,41 +15,7 @@ Powerloom is a full-featured MERN (MongoDB, Express, React, Node.js) web applica
 | Authentication | JWT (JSON Web Token) |
 | Hosting | Vercel (Frontend) + Render (Backend) |
 
-## 📁 Folder Structure
-Powerloom/
-├── server/                   # Express backend
-│   ├── config/               # Database config (db.js)
-│   ├── models/               # Mongoose models
-│   ├── routes/               # API routes
-│   ├── uploads/              # Uploaded files
-│   ├── server.js             # Main server file
-│   └── .env                  # Environment variables
-│
-├── src/                      # React frontend
-│   ├── components/           # Reusable UI components
-│   ├── pages/                # Page-level views
-│   ├── services/             # API calls
-│   ├── styles/               # CSS / Tailwind files
-│   ├── App.jsx               # Main app entry
-│   └── main.jsx              # ReactDOM render
-│
-├── package.json
-└── vite.config.js
 
-## ⚙️ Environment Variables
-
-### Backend (.env)
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/test
-JWT_SECRET=anyrandomsecret
-PORT=5000
-
-> You can change `/test` to `/powerloom` to use a specific database name.
-
-### Frontend (.env)
-If using Vite:
-VITE_API_BASE_URL=https://powerloom-backend.onrender.com
-If using Create React App:
-REACT_APP_API_BASE_URL=https://powerloom-backend.onrender.com
 
 ## 🧠 Features
 ✅ Admin Authentication (JWT-secured)  
